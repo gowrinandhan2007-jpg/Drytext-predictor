@@ -1,0 +1,443 @@
+/* ================================
+   BASIC RESET
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ================================
+   PAGE
+================================ */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #292929,
+            #0b0b0b 65%
+        );
+
+    color: white;
+
+    min-height: 100vh;
+}
+
+
+/* ================================
+   MAIN CONTAINER
+================================ */
+
+.container {
+    width: 90%;
+
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 50px 0;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+header {
+    text-align: center;
+
+    margin-bottom: 40px;
+}
+
+.logo {
+    font-size: 65px;
+
+    margin-bottom: 10px;
+}
+
+header h1 {
+    font-size: 48px;
+
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #999;
+
+    font-size: 18px;
+}
+
+
+/* ================================
+   CARDS
+================================ */
+
+.input-card,
+.dryness-card,
+.verdict-card,
+.improved-card {
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* ================================
+   INPUT
+================================ */
+
+label {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+textarea {
+    width: 100%;
+
+    height: 180px;
+
+    resize: vertical;
+
+    background: #111;
+
+    border: 1px solid #333;
+
+    border-radius: 12px;
+
+    color: white;
+
+    padding: 18px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+textarea::placeholder {
+    color: #666;
+}
+
+textarea:focus {
+    border-color: #ff416c;
+
+    box-shadow:
+        0 0 15px rgba(255, 65, 108, 0.15);
+}
+
+
+/* ================================
+   BUTTON
+================================ */
+
+button {
+    width: 100%;
+
+    margin-top: 15px;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff416c,
+            #ff4b2b
+        );
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+
+    filter: brightness(1.15);
+}
+
+button:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* ================================
+   LOADING
+================================ */
+
+.loading {
+    text-align: center;
+
+    padding: 30px;
+
+    color: #ff8fa3;
+
+    font-size: 18px;
+
+    animation: pulse 1.2s infinite;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes pulse {
+
+    0% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.4;
+    }
+
+}
+
+
+/* ================================
+   RESULTS
+================================ */
+
+.results {
+    margin-top: 30px;
+}
+
+
+/* ================================
+   DRYNESS CARD
+================================ */
+
+.dryness-card {
+    text-align: center;
+
+    margin-bottom: 20px;
+}
+
+.emoji {
+    font-size: 60px;
+
+    margin-bottom: 5px;
+}
+
+.dryness-card h2 {
+    color: #ffb347;
+
+    letter-spacing: 3px;
+}
+
+.big-score {
+    font-size: 70px;
+
+    font-weight: bold;
+
+    margin: 10px;
+}
+
+
+/* ================================
+   DRYNESS BAR
+================================ */
+
+.meter {
+    width: 100%;
+
+    height: 18px;
+
+    background: #222;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+#drynessBar {
+    height: 100%;
+
+    width: 0%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #45ff9a,
+            #ffd93d,
+            #ff4d4d
+        );
+
+    transition: width 1s ease;
+}
+
+
+/* ================================
+   STATISTICS
+================================ */
+
+.stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(130px, 1fr)
+        );
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+.stat {
+    background: #151515;
+
+    border: 1px solid #292929;
+
+    border-radius: 15px;
+
+    padding: 18px;
+
+    text-align: center;
+
+    transition: 0.2s;
+}
+
+.stat:hover {
+    transform: translateY(-3px);
+
+    border-color: #444;
+}
+
+.stat span {
+    font-size: 30px;
+}
+
+.stat p {
+    color: #999;
+
+    margin: 5px 0;
+}
+
+.stat strong {
+    font-size: 24px;
+}
+
+
+/* ================================
+   VERDICT
+================================ */
+
+.verdict-card {
+    margin-bottom: 20px;
+}
+
+.verdict-card h2,
+.improved-card h2 {
+    margin-bottom: 15px;
+}
+
+.verdict-card p,
+.improved-card p {
+    color: #ddd;
+
+    line-height: 1.6;
+
+    font-size: 18px;
+}
+
+
+/* ================================
+   IMPROVED TEXT
+================================ */
+
+.improved-card {
+    border-color: #ff416c;
+}
+
+.improved-card button {
+    background: #222;
+
+    border: 1px solid #444;
+}
+
+.improved-card button:hover {
+    background: #333;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    text-align: center;
+
+    color: #555;
+
+    margin-top: 40px;
+
+    font-size: 14px;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 94%;
+
+        padding: 30px 0;
+    }
+
+    header h1 {
+        font-size: 35px;
+    }
+
+    .logo {
+        font-size: 50px;
+    }
+
+    .big-score {
+        font-size: 55px;
+    }
+
+    .stats {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}

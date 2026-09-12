@@ -1,1 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dry Text Predictor 💀</title>
+
+    <!-- Connect CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+
+        <!-- =========================
+             HEADER
+        ========================== -->
+
+        <header>
+
+            <div class="logo">
+                💀
+            </div>
+
+            <h1>
+                Dry Text Predictor
+            </h1>
+
+            <p>
+                Find out how boring your text really is.
+            </p>
+
+        </header>
+
+
+
+        <!-- =========================
+             TEXT INPUT
+        ========================== -->
+
+        <div class="input-card">
+
+            <label for="textInput">
+                📝 Paste your text
+            </label>
+
+
+            <textarea
+                id="textInput"
+                placeholder="Example: Dear students, tomorrow's class will begin at 9 AM..."
+            ></textarea>
+
+
+            <!-- IMPORTANT:
+                 onclick calls analyzeText()
+            -->
+
+            <button
+                id="analyzeButton"
+                onclick="analyzeText()">
+
+                ANALYZE 💀
+
+            </button>
+
+        </div>
+
+
+
+        <!-- =========================
+             RESULTS
+        ========================== -->
+
+        <div
+            id="results"
+            class="results hidden">
+
+
+            <!-- DRYNESS -->
+
+            <div class="dryness-card">
+
+                <div class="emoji">
+                    🏜️
+                </div>
+
+
+                <h2>
+                    DRYNESS
+                </h2>
+
+
+                <div
+                    id="drynessScore"
+                    class="big-score">
+
+                    0%
+
+                </div>
+
+
+                <div class="meter">
+
+                    <div
+                        id="drynessBar">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 STATISTICS
+            ========================== -->
+
+            <div class="stats">
+
+
+                <!-- HUMOR -->
+
+                <div class="stat">
+
+                    <span>
+                        😂
+                    </span>
+
+                    <p>
+                        Humor
+                    </p>
+
+                    <strong id="humor">
+                        0%
+                    </strong>
+
+                </div>
+
+
+
+                <!-- EMOTION -->
+
+                <div class="stat">
+
+                    <span>
+                        ❤️
+                    </span>
+
+                    <p>
+                        Emotion
+                    </p>
+
+                    <strong id="emotion">
+                        0%
+                    </strong>
+
+                </div>
+
+
+
+                <!-- COMPLEXITY -->
+
+                <div class="stat">
+
+                    <span>
+                        🧠
+                    </span>
+
+                    <p>
+                        Complexity
+                    </p>
+
+                    <strong id="complexity">
+                        0%
+                    </strong>
+
+                </div>
+
+
+
+                <!-- READABILITY -->
+
+                <div class="stat">
+
+                    <span>
+                        👀
+                    </span>
+
+                    <p>
+                        Readability
+                    </p>
+
+                    <strong id="readability">
+                        0%
+                    </strong>
+
+                </div>
+
+
+
+                <!-- ENGAGEMENT -->
+
+                <div class="stat">
+
+                    <span>
+                        🔥
+                    </span>
+
+                    <p>
+                        Engagement
+                    </p>
+
+                    <strong id="engagement">
+                        0%
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =========================
+                 AI VERDICT
+            ========================== -->
+
+            <div class="verdict-card">
+
+                <h2>
+                    💀 AI VERDICT
+                </h2>
+
+
+                <p id="verdict">
+                    Your verdict will appear here...
+                </p>
+
+            </div>
+
+
+
+            <!-- =========================
+                 IMPROVED TEXT
+            ========================== -->
+
+            <div class="improved-card">
+
+                <h2>
+                    ✨ MAKE IT INTERESTING
+                </h2>
+
+
+                <p id="improvedText">
+                    Your improved text will appear here...
+                </p>
+
+
+                <button
+                    onclick="copyText()">
+
+                    COPY ✨
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =========================
+             FOOTER
+        ========================== -->
+
+        <footer>
+
+            Built with 💀 for a hackathon
+
+        </footer>
+
+
+    </div>
+
+
+
+    <!-- =========================
+         CONNECT JAVASCRIPT
+    ========================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
